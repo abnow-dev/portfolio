@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://Astro1289.github.io/folio",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
