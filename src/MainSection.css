@@ -1,0 +1,153 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  grid-template-rows: auto auto;
+}
+
+.about-card {
+  grid-column: span 2;
+}
+
+.skills-card {
+  grid-column: span 1;
+}
+
+.certificates-experience-container {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 1;
+}
+
+.social-container {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 1;
+  cursor: pointer;
+}
+
+.projects-card {
+  grid-column: span 1;
+}
+
+.social-container img {
+  height: 8rem;
+}
+
+.card {
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+  border: 1px solid white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.card:hover {
+  transform: translateY(-30px) scale(1.1) rotateY(10deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.card.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+}
+
+.card-content img {
+  border-radius: 0;
+  margin-right: 1rem;
+  width: 150px;
+  height: 150px;
+}
+
+.certificates-card a {
+  color: #007bff;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.skills-icons img {
+  height: 50px;
+  margin: 0.5rem;
+}
+
+.image-only-card img {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: #333;
+  color: white;
+}
+
+/* Light Theme */
+.light-theme {
+  background-color: #f0f0f0;
+  color: black;
+}
+
+.image-only-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-only-card img {
+  width: 100%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.project-container{
+  margin-top: 1rem;
+}
+
+.project-detail-container{
+  margin-top: 1rem;
+}
+
+/* MainSection.css : mobile handling */
+
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .about-card {
+    grid-column: span 1;
+  }
+
+  .certificates-experience-container, .social-container {
+    grid-column: span 1;
+  }
+
+  .card-content img {
+    width: 100px; 
+    height: 100px;
+  }
+}
+
+.skills-icons img:hover {
+  transform: scale(1.1); 
+}

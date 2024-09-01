@@ -1,0 +1,28 @@
+.card {
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    flex: 1 1 250px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .card-content {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .cert-link-container{
+    margin-top: 1rem;
+  }
