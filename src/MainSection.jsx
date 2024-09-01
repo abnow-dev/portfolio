@@ -128,7 +128,8 @@ const MainSection = () => {
         ))}
       </div>,
       'projects-card',
-      'projects-card'
+      'projects-card',
+      'Projects'
     );
   
     const skillsCard = renderCard(
@@ -151,7 +152,8 @@ const MainSection = () => {
         ))}
       </div>,
       'skills-card',
-      'skills-card'
+      'skills-card',
+      'Skills'
     );
   
     const themeToggleCard = renderCard(
