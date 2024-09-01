@@ -31,13 +31,13 @@ const MainSection = () => {
   const renderCards = () => {
     let cards = [];
 
-    if (activeTab === 'all' || activeTab === 'about') {
+    if (activeTab === 'all') {
       cards.push(
         <Card className="about-card" key="about-card">
           <div className="card-content">
             <img src="abhinav_profile.jpg" alt="Profile Icon" />
             <div>
-              <h4>Hi, I'm Abhinav</h4>
+              <h4>Hi, I'm Abhinav!</h4>
               <p>
                 Software Engineer dedicated to creating intuitive and visually appealing user interfaces.
               </p>
@@ -93,6 +93,11 @@ const MainSection = () => {
                 Python (Basic) Certificate
               </a>
             </div>
+            <div className='cert-link-container'>
+              <a href='https://www.credly.com/badges/4bfb3812-4b98-4a43-8d80-85ec22c4fa78?source=linked_in_profile' target='_blank' rel="noopener noreferrer">
+              Microsoft Certified: Azure Fundamentals
+              </a>
+            </div>
             </div>
           </Card>
           <Card title="Total Experience: 5.3+ years" className="experience-card" key="experience-card">
@@ -133,15 +138,23 @@ const MainSection = () => {
           </div>
         </Card>
       );
+      cards.push(
+        <Card title="Languages" className="languages-card" key="language-card">
+          <ul>
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Telugu</li>
+          </ul>
+        </Card>
+      );
+      cards.push(
+        <Card title={!isDarkTheme ? 'Dark Mode' : 'Light Mode'} className="theme-toggle-card" key="theme-toggle-card">
+          <div className="toggle-button" onClick={toggleTheme}>
+            <div className={`toggle-circle ${isDarkTheme ? 'dark' : 'light'}`}></div>
+          </div>
+        </Card>
+      );
     }
-
-    cards.push(
-      <Card title="Theme Toggle" className="theme-toggle-card" key="theme-toggle-card">
-        <button onClick={toggleTheme}>
-          Toggle Theme
-        </button>
-      </Card>
-    );
 
     return cards;
   };
