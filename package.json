@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "vite build",
+    "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://Astro1289.github.io/folio",
+  "homepage": "https://abnow-dev.github.io/portfolio",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
