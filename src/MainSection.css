@@ -30,7 +30,7 @@
   grid-column: span 1;
 }
 
-.social-container img {
+.social-container a img {
   height: 8rem;
 }
 
@@ -122,7 +122,7 @@
   margin-top: 1rem;
 }
 
-.project-detail-container{
+.project-detail-container, .resume-container{
   margin-top: 1rem;
 }
 
@@ -135,7 +135,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
 }
 
 .toggle-button {
@@ -164,13 +163,23 @@
 /* Dark theme styles */
 .toggle-button .dark {
   transform: translateX(30px);
-  background-color: #f39c12;
+  background-color: #f1e0c4;
 }
 
 /* Light theme styles */
 .toggle-button .light {
   transform: translateX(0);
-  background-color: #3498db;
+  background-color: #3d4a53;
+}
+
+.resume-container a{
+  color: red;
+  text-decoration: none;
+}
+
+.resume-container {
+  display: flex;
+  justify-content: center;
 }
 
 
