@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react-swc';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // For root deployment
+  base: '/portfolio/', // Ensure this matches the repository path
 });
