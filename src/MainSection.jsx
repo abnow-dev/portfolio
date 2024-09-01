@@ -37,7 +37,7 @@ const MainSection = () => {
           <div className="card-content">
             <img src="abhinav_profile.jpg" alt="Profile Icon" />
             <div>
-              <h4>Hi, I'm Abhinav!!</h4>
+              <h4>Hi, I'm Abhinav</h4>
               <p>
                 Software Engineer dedicated to creating intuitive and visually appealing user interfaces.
               </p>
