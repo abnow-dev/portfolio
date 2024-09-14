@@ -167,7 +167,7 @@ const MainSection = () => {
 
     const resumeCard = renderCard(
       <div className='resume-container'>
-        <a href='abhinav_singirthi.pdf' target='_blank' rel='noopener noreferrer' download='Abhinav_Singirthi_Resume.pdf'>
+        <a href='Abhinav_Resume.pdf' target='_blank' rel='noopener noreferrer' download='Abhinav_Singirthi_Resume.pdf'>
           <img src='download_svg.webp' alt='Download Resume' height={50} width={50} />
         </a>
       </div>,
