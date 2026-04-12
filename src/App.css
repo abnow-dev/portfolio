@@ -1,0 +1,251 @@
+/* ============================================================
+   ABNOW — Comic Design System
+   Fonts: Bangers (display) + Comic Neue (body)
+   Palette: Pure B&W, light ↔ dark
+   ============================================================ */
+
+/* ── Variables ─────────────────────────────────────────────── */
+:root {
+  --bg:           #ffffff;
+  --bg-panel:     #fafafa;
+  --bg-alt:       #f0f0f0;
+  --text:         #0a0a0a;
+  --text-muted:   #555555;
+  --border:       #0a0a0a;
+  --dot-color:    rgba(0,0,0,0.12);
+  --stripe-color: rgba(0,0,0,0.05);
+
+  --shadow-sm:    4px 4px 0 var(--border);
+  --shadow-md:    6px 6px 0 var(--border);
+  --shadow-lg:    9px 9px 0 var(--border);
+
+  --border-w:     3px;
+  --radius:       2px;
+  --font-display: 'Bangers', 'Impact', cursive;
+  --font-body:    'Comic Neue', 'Comic Sans MS', cursive;
+  --transition:   0.18s ease;
+}
+
+[data-theme="dark"] {
+  --bg:           #0c0c0c;
+  --bg-panel:     #141414;
+  --bg-alt:       #1a1a1a;
+  --text:         #f0f0f0;
+  --text-muted:   #888888;
+  --border:       #f0f0f0;
+  --dot-color:    rgba(255,255,255,0.08);
+  --stripe-color: rgba(255,255,255,0.04);
+}
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+  overflow-x: hidden;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { display: block; max-width: 100%; }
+
+/* ── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border: 2px solid var(--bg); }
+
+/* ── Background Patterns ────────────────────────────────────── */
+.bg-dots {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle, var(--dot-color) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.bg-stripes {
+  background-color: var(--bg-alt);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 6px,
+    var(--stripe-color) 6px,
+    var(--stripe-color) 9px
+  );
+}
+
+/* ── Comic Panel ─────────────────────────────────────────────── */
+.panel {
+  background: var(--bg-panel);
+  border: var(--border-w) solid var(--border);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.panel:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0 var(--border);
+}
+
+.panel-flat {
+  background: var(--bg-panel);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* ── Caption Box (comic "MEANWHILE..." label) ─────────────────── */
+.caption {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--border);
+  color: var(--bg);
+  padding: 3px 12px;
+  display: inline-block;
+}
+
+/* ── Section Title ───────────────────────────────────────────── */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.section-rule {
+  width: 64px;
+  height: var(--border-w);
+  background: var(--border);
+  margin: 10px 0 2.5rem;
+  display: block;
+}
+
+/* ── Speech Bubble ───────────────────────────────────────────── */
+.bubble {
+  position: relative;
+  background: var(--bg-panel);
+  border: var(--border-w) solid var(--border);
+  border-radius: 8px;
+  padding: 1.4rem 1.8rem;
+}
+
+.bubble.tail-left::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 1.4rem;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 20px solid var(--border);
+}
+
+.bubble.tail-left::after {
+  content: '';
+  position: absolute;
+  left: -14px;
+  top: calc(1.4rem + 3px);
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 14px solid var(--bg-panel);
+  z-index: 1;
+}
+
+/* ── Action Badge ────────────────────────────────────────────── */
+.action-badge {
+  font-family: var(--font-display);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: var(--border-w) solid var(--border);
+  display: inline-block;
+  line-height: 1;
+  background: var(--bg);
+  color: var(--text);
+  padding: 4px 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: var(--border-w) solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--border);
+}
+
+.btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--border);
+}
+
+.btn-fill {
+  background: var(--border);
+  color: var(--bg);
+}
+
+/* ── Reveal on Scroll ────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Skill Logo dark-mode invert ─────────────────────────────── */
+.skill-logo { filter: grayscale(1); }
+[data-theme="dark"] .skill-logo { filter: grayscale(1) invert(1); }
+
+/* ── Layout helpers ──────────────────────────────────────────── */
+.section {
+  padding: 5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-wrap {
+  padding: 5rem 2rem;
+}
+
+.section-wrap .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Divider ─────────────────────────────────────────────────── */
+.comic-divider {
+  border: none;
+  border-top: var(--border-w) solid var(--border);
+  margin: 0;
+}

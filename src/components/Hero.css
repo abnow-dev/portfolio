@@ -1,0 +1,132 @@
+.hero {
+  min-height: 100vh;
+  padding: 7rem 2rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative floaters */
+.hero-floater {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  font-weight: 700;
+  color: var(--text);
+  opacity: 0.18;
+  font-size: 1.2rem;
+  user-select: none;
+}
+
+.hero-floater.action-badge {
+  opacity: 1;
+  font-size: 1.1rem;
+  padding: 4px 12px;
+}
+
+.f1 { top: 14%; right: 8%; font-size: 1rem; }
+.f2 { bottom: 22%; left: 5%; font-size: 0.9rem; }
+.f3 { top: 20%; left: 10%; font-size: 2.5rem; opacity: 0.12; }
+.f4 { bottom: 30%; right: 15%; font-size: 2rem; opacity: 0.12; }
+.f5 { top: 55%; left: 3%; font-size: 1.8rem; opacity: 0.1; }
+
+/* Title block */
+.hero-title-block {
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.hero-title-block .caption {
+  margin-bottom: 1.2rem;
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  letter-spacing: 3px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.hero-role {
+  margin-bottom: 0.6rem;
+}
+
+.hero-role-text {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+.hero-location {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Bubble side */
+.hero-bubble-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 1.5rem;
+}
+
+.hero-bubble {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.hero-quote {
+  font-style: italic;
+}
+
+/* CTAs */
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Mobile */
+@media (max-width: 750px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-bubble-wrap {
+    padding-top: 0;
+  }
+
+  .bubble.tail-left::before,
+  .bubble.tail-left::after {
+    display: none;
+  }
+
+  .f1, .f2, .f3, .f4, .f5 {
+    display: none;
+  }
+}

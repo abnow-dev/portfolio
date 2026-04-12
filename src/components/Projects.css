@@ -1,0 +1,93 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card--open {
+  box-shadow: var(--shadow-lg);
+}
+
+.project-top {
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.project-tag {
+  display: inline-block;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.project-blurb {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-toggle {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  background: none;
+  border: 2px solid var(--border);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 3px 10px;
+  align-self: flex-start;
+  margin-top: 0.25rem;
+  transition: color var(--transition), background var(--transition);
+}
+
+.project-toggle:hover {
+  background: var(--border);
+  color: var(--bg);
+}
+
+.project-detail {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.project-detail li {
+  font-size: 0.9rem;
+  color: var(--text);
+  padding-left: 1.2rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.project-detail li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  top: 3px;
+}

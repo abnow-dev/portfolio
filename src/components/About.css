@@ -1,0 +1,136 @@
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: var(--border-w) solid var(--border);
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-bio {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.about-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.about-tag {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid var(--border);
+  padding: 2px 8px;
+  color: var(--text-muted);
+}
+
+/* Contact list */
+.about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.about-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.about-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--text-muted);
+}
+
+.about-link {
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.about-link:hover {
+  border-bottom-color: var(--border);
+}
+
+/* Languages */
+.about-langs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.about-langs li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.lang-flag {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  background: var(--border);
+  color: var(--bg);
+  padding: 2px 6px;
+  min-width: 32px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Certs */
+.about-certs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about-certs li {
+  font-size: 0.85rem;
+}
+
+.cert-link {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.cert-link:hover {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 550px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
